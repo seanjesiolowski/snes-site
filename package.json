@@ -1,0 +1,12 @@
+{
+  "name": "snes-matching-game",
+  "version": "1.0.0",
+  "description": "SNES fan site with a memory matching card game built in vanilla HTML, CSS, and JavaScript",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint game.js"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1"
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNES Matching Game</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <!-- Settings modal -->
+    <div id="settingsModal" class="modal-overlay" style="display:none;">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+            <div class="modal-header">
+                <h2 id="settingsTitle">Game Settings</h2>
+            </div>
+            <p class="subtitle">Choose your preferences before starting. You can toggle the sound during the game.</p>
+            <div class="row">
+                <div>
+                    <div style="font-weight:600;">Sound</div>
+                    <div style="font-size:12px;color:#6a5f73;">Enable game audio effects</div>
+                </div>
+                <label class="switch" title="Toggle sound">
+                    <input id="soundToggle" type="checkbox">
+                    <span class="slider" aria-hidden="true"></span>
+                </label>
+            </div>
+            <div class="row">
+                <div>
+                    <div style="font-weight:600;">Challenge Mode</div>
+                    <div style="font-size:12px;color:#6a5f73;">Limit guesses to 50</div>
+                </div>
+                <label class="switch" title="Toggle challenge mode">
+                    <input id="modeToggle" type="checkbox" checked>
+                    <span class="slider" aria-hidden="true"></span>
+                </label>
+            </div>
+            <div class="actions">
+                <button id="cancelBtn" class="btn btn-ghost" type="button">Cancel</button>
+                <button id="startBtn" class="btn btn-primary" type="button">Start</button>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="row">
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item">
+                <div id="fill"></div>
+            </div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+            <div class="item getsImg"></div>
+        </div>
+    </main>
+    <a href="index.html" class="back-link" title="Back to home">&larr;</a>
+    <!-- In-game floating sound toggle -->
+    <button id="inGameToggle" aria-pressed="true" title="Toggle sound" class="in-game-toggle">🔊</button>
+    <!-- Click message -->
+    <div id="clickMessage">Click the tiles and match the SNES games!</div>
+    <script src="game.js"></script>
+</body>
+</html>

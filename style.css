@@ -1,0 +1,99 @@
+/* https://www.color-hex.com/color-palette/22515 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: #cec9cc;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #211a21;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  max-width: 480px;
+  width: 100%;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #1f1724;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  border: 5px solid #b5b6e4;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(31, 23, 36, 0.15);
+  margin-bottom: 32px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Buttons — mirrors game.css btn styles */
+.btn {
+  display: block;
+  padding: 12px 20px;
+  border: 1px solid rgba(79, 67, 174, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  color: #211a21;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 80ms ease, box-shadow 150ms ease, background 150ms ease;
+}
+
+.btn:hover {
+  background: #f3f2fa;
+  box-shadow: 0 4px 12px rgba(79, 67, 174, 0.12);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #6e5ce6, #4f43ae);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px rgba(79, 67, 174, 0.18);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(79, 67, 174, 0.28);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #4b415b;
+  border: 1px solid rgba(75, 65, 91, 0.12);
+}
+
+.btn-ghost:hover {
+  background: rgba(75, 65, 91, 0.06);
+}
+
+/* Focus accessibility */
+.btn:focus {
+  outline: 3px solid rgba(79, 67, 174, 0.25);
+  outline-offset: 3px;
+}
