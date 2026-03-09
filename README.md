@@ -13,7 +13,7 @@ A Super Nintendo fan site featuring a memory matching card game, built with vani
 
 ## Play
 
-Open `index.html` in any browser, or [play it live on GitHub Pages](#) if deployed.
+Open `index.html` in any browser, or [play it live on GitHub Pages](https://seanjesiolowski.github.io/snes-site/).
 
 ## Project Structure
 
