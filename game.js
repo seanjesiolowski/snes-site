@@ -29,6 +29,10 @@
     const cancelBtn = document.getElementById("cancelBtn");
     const fillElement = document.getElementById("fill");
     const clickMessage = document.getElementById("clickMessage");
+    const gameOverModal = document.getElementById("gameOverModal");
+    const gameOverTitle = document.getElementById("gameOverTitle");
+    const gameOverMessage = document.getElementById("gameOverMessage");
+    const playAgainBtn = document.getElementById("playAgainBtn");
 
     // --- Sound ---
 
@@ -166,10 +170,11 @@
                 if (matchesFound === matchGoal) {
                     togglePlayAgain();
                     playSound(winSnd);
-                    if (clickMessage) {
-                        clickMessage.textContent = "Congratulations! You\u2019ve found all matches!";
-                        clickMessage.style.color = "lightgreen";
-                    }
+                    if (clickMessage) clickMessage.style.display = "none";
+                    showGameOverModal(
+                        "Congratulations!",
+                        "You\u2019ve found all matches! Well done!"
+                    );
                 }
             } else {
                 allowInteraction = false;
@@ -193,24 +198,33 @@
     function updateClickMessage() {
         if (!clickMessage) return;
         if (isChallengeMode) {
+            clickMessage.style.display = "block";
             if (clickCount >= maxGuesses) {
-                clickMessage.style.color = "red";
-                clickMessage.textContent = "You have reached the maximum number of guesses. Try again!";
+                clickMessage.style.display = "none";
                 togglePlayAgain();
+                showGameOverModal(
+                    "Out of Guesses!",
+                    "You\u2019ve used all 50 guesses. Give it another try!"
+                );
             } else {
                 clickMessage.textContent = "You have " + (maxGuesses - clickCount) + " tries left.";
                 clickMessage.style.color = "white";
             }
         } else {
-            clickMessage.textContent = "";
+            clickMessage.style.display = "none";
         }
     }
 
+    function showGameOverModal(title, message) {
+        if (!gameOverModal) return;
+        if (gameOverTitle) gameOverTitle.textContent = title;
+        if (gameOverMessage) gameOverMessage.textContent = message;
+        gameOverModal.style.display = "flex";
+        allowInteraction = false;
+        if (playAgainBtn) setTimeout(() => playAgainBtn.focus(), 50);
+    }
+
     function togglePlayAgain() {
-        if (fillElement) {
-            fillElement.textContent = "Play Again?";
-            fillElement.style.color = "white";
-        }
         canReload = true;
     }
 
@@ -296,6 +310,12 @@
 
         if (fillElement) {
             fillElement.addEventListener("click", reloadPage);
+        }
+
+        if (playAgainBtn) {
+            playAgainBtn.addEventListener("click", () => {
+                window.location.reload();
+            });
         }
 
         document.addEventListener("keydown", (e) => {
