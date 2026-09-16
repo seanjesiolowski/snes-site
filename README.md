@@ -31,7 +31,3 @@ aud/            Sound effects (click, correct match, win)
 ```sh
 npm run lint
 ```
-
-## Built With
-
-HTML5, CSS3, vanilla JavaScript, and ESLint for code quality.
