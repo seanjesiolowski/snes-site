@@ -1,7 +1,6 @@
 # SNES Matching Game
 
-A Super Nintendo fan site featuring a memory matching card game, built with vanilla HTML, CSS, and JavaScript — no frameworks or build tools.
-
+A Super Nintendo fan site featuring a memory matching card game, built with vanilla HTML, CSS, and JavaScript — no frameworks
 ## Features
 
 - **Memory matching game** — 5×5 grid with 12 pairs of classic SNES box art to match
